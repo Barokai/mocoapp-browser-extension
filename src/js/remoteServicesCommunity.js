@@ -228,7 +228,7 @@ export default {
       return issueId ? `${issueId}: ${issueTitle}` : issueTitle
     },
     projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
-    allowHostOverride: true,
+    allowHostOverride: false,
   },
 
   azuredevops: {
@@ -244,6 +244,6 @@ export default {
       return issueId ? `${issueId}: ${issueTitle}` : issueTitle
     },
     projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
-    allowHostOverride: true,
+    allowHostOverride: false,
   }
 }
