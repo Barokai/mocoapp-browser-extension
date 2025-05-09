@@ -235,7 +235,7 @@ export default {
     name: "azuredevops",
     host: "https://dev.azure.com",
     // https://dev.azure.com/org/project/_workitems/edit/id/
-    urlPatterns: [":host:/:project/_workitems/edit/:id(/*)"],
+    urlPatterns: [":host:/:org/:project/_workitems/edit/:id(/*)"],
     description: (document, _service, { title }) => {
       console.log("trying to load description information for azuredevops", _service, title);
       const issueIdMatch = window.location.href.match(/_workitems\/edit\/(\d+)(?:\/.*)?(?:\?.*)?/)
