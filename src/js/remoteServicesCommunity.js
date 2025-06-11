@@ -214,11 +214,9 @@ export default {
     allowHostOverride: true,
   },
 
-  // visualstudio.com/azure devops service configs provided by lx-media (@barokai)
   visualstudiocom: {
     name: "visualstudiocom",
     host: "https://:org.visualstudio.com",
-    // https://org.visualstudio.com/project/_workitems/edit/id/
     urlPatterns: [":host:/:project/_workitems/edit/:id(/*)"],
     description: (document, _service, { project, id }) => {
       // The project name is used as a fallback for the issue title
@@ -232,8 +230,6 @@ export default {
   azuredevops: {
     name: "azuredevops",
     host: "https://dev.azure.com",
-    // https://dev.azure.com/org/project/_workitems/edit/id/
-
     urlPatterns: [":host:/:org/:project/_workitems/edit/:id(/*)"],
     description: (document, _service, { project, id }) => {
       const issueTitle = document.querySelector(".work-item-title-textfield>input")?.value.trim() || decodeURIComponent(project)
